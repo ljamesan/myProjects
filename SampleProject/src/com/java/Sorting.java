@@ -32,7 +32,7 @@ public class Sorting {
             while (arr[left] < pivot) left++;
             while (arr[right] > pivot) right--;
 			if(left>=right) {
-				return left;
+				return right;
 			}
 			swap(arr,left,right);
 			left++;
