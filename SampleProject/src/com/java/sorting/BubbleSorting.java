@@ -1,5 +1,7 @@
 package com.java.sorting;
 
+import java.util.Arrays;
+
 public class BubbleSorting {
 	
 	
@@ -9,26 +11,25 @@ public class BubbleSorting {
 		
 		bubbleSort(arr);
 		
-		for (int i : arr) {
-			System.out.println(i);
-		}
+		//System.out.println(Arrays.toString(arr));
 	}
 	public static void bubbleSort(int[] arr) {
 		boolean swap;
-		for (int i = 0; i < arr.length; i++) {
+		for (int i = 1; i < arr.length; i++) {
 			swap=false;
-			for (int j = i; j < arr.length; j++) {
-				if(arr[i]> arr[j]) {
+			for (int j = 0; j < arr.length-i; j++) {
+				if(arr[j]>arr[j+1]) {
 					int temp= arr[j];
-					arr[j] = arr[i];
-					arr[i] = temp;
+					arr[j] = arr[j+1];
+					arr[j+1] = temp;
 					swap=true;
 				}
+				System.out.println(Arrays.toString(arr));
 			}
+			
 			if(!swap) {
 				break;
 			}
-			System.out.println("Pass: "+(i+1));
 		}
 		
 	}
